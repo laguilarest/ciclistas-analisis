@@ -1,2 +1,3 @@
-# ciclistas-analisis
-Paquete para analizar datos de ciclistas en la carrera Orbea Monegros 2024
+Proyecto de Análisis de Ciclistas
+
+Este proyecto contiene herramientas para analizar datos de ciclistas en competiciones.
