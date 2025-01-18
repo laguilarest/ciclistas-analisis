@@ -1,0 +1,22 @@
+Metadata-Version: 2.2
+Name: ciclistas_analisis
+Version: 1.0.0
+Summary: Este proyecto contiene herramientas para analizar datos de ciclistas en la competición de Orbea Monegros.
+Home-page: https://github.com/laguilarest/ciclistas-analisis
+Author: Jose Vicente
+Author-email: laguilarest@uoc.edu
+Classifier: Programming Language :: Python :: 3
+Classifier: License :: OSI Approved :: MIT License
+Classifier: Operating System :: OS Independent
+Requires-Python: >=3.8
+License-File: LICENSE.txt
+Requires-Dist: pandas>=1.0
+Requires-Dist: matplotlib>=3.0
+Requires-Dist: faker>=13.0
+Dynamic: author
+Dynamic: author-email
+Dynamic: classifier
+Dynamic: home-page
+Dynamic: requires-dist
+Dynamic: requires-python
+Dynamic: summary
