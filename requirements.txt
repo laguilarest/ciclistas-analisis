@@ -1,5 +1,0 @@
-pandas==2.2.3
-faker==33.3.1
-matplotlib>=3.7.0
-pytest>=7.0.0
-
