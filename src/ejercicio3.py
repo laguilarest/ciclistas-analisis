@@ -88,6 +88,11 @@ def generar_histograma(df_grouped, output_path='img/histograma.png'):
         df_grouped (pd.DataFrame): DataFrame con columnas 'time_grouped' y 'num_ciclistas'.
         output_path (str): Ruta donde se guardará el histograma generado.
     """
+    # Crear el directorio de salida si no existe
+    output_dir = os.path.dirname(output_path)
+    if not os.path.exists(output_dir):
+        os.makedirs(output_dir)
+
     # Generar el histograma
     plt.figure(figsize=(10, 6))
     plt.bar(df_grouped['time_grouped'], df_grouped['num_ciclistas'], color='blue', alpha=0.7)
