@@ -91,7 +91,7 @@ def generar_histograma(df_grouped, output_path='img/histograma.png'):
     """
     # Crear el directorio de salida si no existe
     output_dir = os.path.dirname(output_path)
-    if not os.path.exists(output_dir):
+    if output_dir and not os.path.exists(output_dir):  # Verifica si existe el directorio
         os.makedirs(output_dir)
 
     # Generar el histograma
