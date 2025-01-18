@@ -7,6 +7,7 @@ Funciones incluidas:
 - generar_histograma: Genera un histograma de ciclistas por franja de tiempo.
 """
 
+import os
 import pandas as pd
 import matplotlib.pyplot as plt
 
