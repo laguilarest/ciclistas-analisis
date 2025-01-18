@@ -1,6 +1,45 @@
+"""
+Módulo para limpiar nombres de clubes ciclistas y agruparlos.
 
-import re
+Funciones incluidas:
+- clean_club: Limpia el nombre de los clubes siguiendo reglas específicas.
+- agrupar_clubes: Agrupa los datos de ciclistas por clubes limpios.
+"""
+
 import pandas as pd
+import re
+
+
+def importar_dataset(filepath):
+    """
+    Importa el dataset desde la ruta proporcionada y lo carga en un DataFrame.
+
+    Parameters:
+        filepath (str): Nombre del archivo CSV del dataset.
+
+    Returns:
+        pd.DataFrame: DataFrame con los datos del archivo o None si ocurre un error.
+    """
+    try:
+        df = pd.read_csv(filepath, delimiter=";", encoding="latin1")
+        return df
+    except Exception as e:
+        print(f"Error al importar el dataset: {e}")
+        return None
+
+
+def eliminar_no_participantes(df):
+    """
+    Elimina del dataset los ciclistas con tiempo '00:00:00', indicando que no participaron.
+
+    Parameters:
+        df (pd.DataFrame): DataFrame con los datos de los ciclistas.
+
+    Returns:
+        pd.DataFrame: DataFrame filtrado, sin los ciclistas que no participaron.
+    """
+    return df[df['time'] != "00:00:00"]
+
 
 def clean_club(club):
     """
@@ -48,6 +87,7 @@ def clean_club(club):
 
     return club
 
+
 def agrupar_clubes(df):
     """
     Limpia los nombres de los clubes y agrupa los datos por clubes ciclistas.
@@ -67,3 +107,30 @@ def agrupar_clubes(df):
     # Ordenar por número de ciclistas en orden descendente
     df_clubs = df_clubs.sort_values(by='num_ciclistas', ascending=False)
     return df_copy, df_clubs
+
+
+if __name__ == "__main__":
+    # Ruta del dataset
+    filepath = "data/dataset.csv"
+
+    # Importar dataset
+    print("\n--- Importar Dataset ---")
+    df = importar_dataset(filepath)
+
+    if df is not None:
+        # Eliminar ciclistas con tiempo '00:00:00'
+        print("\n--- Eliminar ciclistas con tiempo '00:00:00' ---")
+        df = eliminar_no_participantes(df)
+        print(f"Después de eliminar no participantes, quedan {len(df)} ciclistas.")
+
+        # Limpiar y agrupar nombres de clubes
+        print("\n--- Limpiar y Agrupar Nombres de Clubes ---")
+        df_clean, df_clubs = agrupar_clubes(df)
+
+        print("\nPrimeros 15 valores con la columna 'club_clean':")
+        print(df_clean[['club', 'club_clean']].head(15))
+
+        print("\nDatos agrupados por clubes ciclistas:")
+        print(df_clubs.head(15))
+    else:
+        print("No se pudo cargar el dataset.")

@@ -1,4 +1,4 @@
-Metadata-Version: 2.2
+Metadata-Version: 2.1
 Name: ciclistas_analisis
 Version: 1.0.0
 Summary: Este proyecto contiene herramientas para analizar datos de ciclistas en la competición de Orbea Monegros.
@@ -13,10 +13,3 @@ License-File: LICENSE.txt
 Requires-Dist: pandas>=1.0
 Requires-Dist: matplotlib>=3.0
 Requires-Dist: faker>=13.0
-Dynamic: author
-Dynamic: author-email
-Dynamic: classifier
-Dynamic: home-page
-Dynamic: requires-dist
-Dynamic: requires-python
-Dynamic: summary

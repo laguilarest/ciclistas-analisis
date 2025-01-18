@@ -1,14 +1,37 @@
-import sys
-import os
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
+"""
+Módulo principal para ejecutar todas las funciones de análisis de ciclistas.
 
-from src.ejercicio1 import importar_dataset, mostrar_eda
-from src.ejercicio2 import name_surname, eliminar_no_participantes, recuperar_dorsal
-from src.ejercicio3 import agrupar_tiempos, generar_histograma
-from src.ejercicio4 import agrupar_clubes
-from src.ejercicio5 import filtrar_ciclistas_por_club, mejor_ciclista_en_club, calcular_posicion_y_porcentaje
+Incluye la ejecución de:
+- Importación y análisis exploratorio del dataset.
+- Anonimización y limpieza de los datos.
+- Agrupación de tiempos y generación de histogramas.
+- Agrupación y ordenación de clubes ciclistas.
+- Identificación del mejor ciclista en un club específico.
+"""
+
+from ciclistas_analisis.ejercicio1 import importar_dataset, mostrar_eda
+from ciclistas_analisis.ejercicio2 import name_surname, eliminar_no_participantes, recuperar_dorsal
+from ciclistas_analisis.ejercicio3 import agrupar_tiempos, generar_histograma
+from ciclistas_analisis.ejercicio4 import agrupar_clubes
+from ciclistas_analisis.ejercicio5 import (
+    filtrar_ciclistas_por_club,
+    mejor_ciclista_en_club,
+    calcular_posicion_y_porcentaje
+)
+
 
 def main():
+    """
+    Función principal que ejecuta todas las operaciones de análisis de ciclistas.
+
+    Incluye:
+    - Importación y análisis exploratorio del dataset.
+    - Anonimización y limpieza de datos.
+    - Agrupación de tiempos y generación de un histograma.
+    - Agrupación y ordenación de clubes.
+    - Identificación del mejor ciclista de un club.
+    """
+
     # Ejercicio 1: Importar Dataset
     filepath = "data/dataset.csv"
     print("\n--- Ejercicio 1: Importar Dataset ---")

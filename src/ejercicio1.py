@@ -1,3 +1,11 @@
+"""
+Módulo para cargar un dataset y realizar un análisis exploratorio básico.
+
+Contiene las funciones:
+- importar_dataset: carga un dataset desde un archivo CSV.
+- mostrar_eda: realiza un análisis exploratorio del dataset.
+"""
+
 import pandas as pd
 
 def importar_dataset(filepath):
@@ -20,8 +28,11 @@ def importar_dataset(filepath):
         print(f"Error: El archivo {filepath} no se encuentra en el directorio actual.")
     except pd.errors.EmptyDataError:
         print("Error: El archivo está vacío o tiene un formato incorrecto.")
-    except Exception as e:
-        print(f"Error inesperado: {e}")
+    except UnicodeDecodeError:
+        print("Error: Problema de codificación en el archivo.")
+    except ValueError:
+        print("Error: Problema de valores en el archivo.")
+
     return None
 
 
@@ -51,3 +62,13 @@ def mostrar_eda(df):
             print(f"- {col}")
     else:
         print("El dataset no está cargado.")
+
+
+if __name__ == "__main__":
+    # Ruta al archivo de datos
+    filepath = "data/dataset.csv"
+
+    # Ejecutar las funciones del ejercicio
+    print("\n--- Ejecutando Ejercicio 1 ---")
+    df = importar_dataset(filepath)
+    mostrar_eda(df)

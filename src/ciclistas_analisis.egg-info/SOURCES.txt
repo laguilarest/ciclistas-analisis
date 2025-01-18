@@ -1,13 +1,6 @@
 LICENSE.txt
 README.md
 setup.py
-src/ciclistas_analisis/__init__.py
-src/ciclistas_analisis/ejercicio1.py
-src/ciclistas_analisis/ejercicio2.py
-src/ciclistas_analisis/ejercicio3.py
-src/ciclistas_analisis/ejercicio4.py
-src/ciclistas_analisis/ejercicio5.py
-src/ciclistas_analisis/main.py
 src/ciclistas_analisis.egg-info/PKG-INFO
 src/ciclistas_analisis.egg-info/SOURCES.txt
 src/ciclistas_analisis.egg-info/dependency_links.txt
